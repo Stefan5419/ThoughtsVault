@@ -33,3 +33,6 @@ This project is built using the following technologies:
 - MONGODB_CONNECTION_STRING
 - MONGODB_DATABASE_NAME
 - PORT
+
+## Future improvements
+- I will add a feature to notify users that their capsules are unlocked by emailing them.
