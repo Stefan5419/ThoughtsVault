@@ -3,8 +3,9 @@ const router = require('../routes');
 const path = require('path');
 const app = express();
 const cors = require('cors');
+require('dotenv').config();
 
-const PORT = 3000;
+const PORT = process.env.PORT;
 
 const Methods = {
     startWebServer: () => {
