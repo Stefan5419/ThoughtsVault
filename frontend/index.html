@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <title>Thoughts Vault</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="particles-container" id="particles-js"></div>
+
+    <!-- Auth Container -->
+    <div class="auth-container" id="auth-container">
+        <div class="auth-card">
+            <div class="logo-container" style="text-align: center; margin-bottom: 1rem;">
+                <div class="logo-icon" style="display: inline-flex;">
+                    <i class="fas fa-hourglass"></i>
+                </div>
+            </div>
+            <h1>Thoughts Vault</h1>
+            <p>Send messages to your future self</p>
+
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="login">Login</button>
+                <button class="tab-btn" data-tab="register">Register</button>
+            </div>
+
+            <div id="login-tab" class="tab-content active">
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-username">Username</label>
+                        <input type="text" id="login-username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Login</button>
+                </form>
+            </div>
+
+            <div id="register-tab" class="tab-content">
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="register-username">Username</label>
+                        <input type="text" id="register-username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Password</label>
+                        <input type="password" id="register-password" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div class="container" id="app-container" style="display: none;">
+        <header>
+            <div class="user-controls">
+                <button id="logout-btn" class="btn-outline">Logout</button>
+            </div>
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <i class="fas fa-hourglass"></i>
+                </div>
+            </div>
+            <h1>Time Capsule</h1>
+            <p class="tagline">Send a message to your future self</p>
+        </header>
+
+        <div class="card create-card">
+            <div class="card-decoration">
+                <div class="time-sphere"></div>
+            </div>
+            <div class="card-content">
+                <h2 class="card-title"><i class="fas fa-paper-plane"></i> Create Time Capsule</h2>
+
+                <form id="send">
+                    <div class="form-group">
+                        <label for="message">Message for your future self:</label>
+                        <textarea id="message" name="message" rows="4"
+                            placeholder="Write something to your future self..."></textarea>
+                        <span class="focus-border"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="unlockDate">When should your future self receive this message?</label>
+                        <div class="custom-date-input">
+                            <i class="fas fa-calendar-alt"></i>
+                            <input type="date" id="unlockDate" name="unlockDate">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <span class="btn-text"><i class="fas fa-paper-plane"></i> Send to the Future</span>
+                        <span class="btn-shine"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="capsules-preview">
+            <h2 class="section-title"><i class="fas fa-archive"></i> Your Time Capsules</h2>
+
+            <div class="capsules-container">
+                <div id="capsules-list">
+                    <p class="empty-state">No time capsules yet. Create one above!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3><i class="fas fa-unlock"></i> Available Capsules</h3>
+            </div>
+            <div class="sidebar-content">
+                <div id="available-capsules-list">
+                    <p class="empty-state">No unlocked capsules yet</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Create messages today that your future self will thank you for.</p>
+            <div class="footer-decoration">
+                <i class="fas fa-hourglass-half"></i>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
