@@ -18,7 +18,7 @@ const Methods = {
 
     getCapsulesByUsername: async (req, res) => {
         const username = req.userInfo.userId;
-        console.log(username);
+       // console.log(username);
         const capsules = await CapsulesService.getCapsuleByUser(username);
 
         res.status(200).send(capsules);
@@ -40,8 +40,8 @@ const Methods = {
 
         }
 
-        console.log('Date now is: ' + new Date().toISOString())
-        console.log('Capsule unlock date is ', capsule.unlockDate);
+      //  console.log('Date now is: ' + new Date().toISOString())
+        //console.log('Capsule unlock date is ', capsule.unlockDate);
 
         if (new Date(capsule.unlockDate) > new Date()) {
 
