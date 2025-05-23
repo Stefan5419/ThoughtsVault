@@ -210,7 +210,7 @@ async function handleCapsuleClick(event) {
 
     const capsuleElement = event.currentTarget;
     const capsuleId = capsuleElement.dataset.id;
-    console.log(capsuleId);
+   // console.log(capsuleId);
     const isUnlocked = capsuleElement.dataset.unlocked === 'true';
 
     // If it's already unlocked, no need to fetch again
@@ -253,7 +253,7 @@ async function handleCapsuleClick(event) {
     } catch (error) {
         console.error("Error checking capsule:", error);
         if (error.response?.status === 401 || error.response?.status === 403) {
-            console.log(error.response?.data)
+         //   console.log(error.response?.data)
             localStorage.removeItem("token");
             checkAuthStatus();
         }
