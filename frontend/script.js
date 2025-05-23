@@ -11,7 +11,7 @@ function checkAuthStatus() {
         fetchCapsules();
     } else {
         isLoggedIn = false;
-        document.getElementById("auth-container").style.display = "block";
+      //  document.getElementById("auth-container").style.display = "block";
         document.getElementById("app-container").style.display = "none";
     }
 }
