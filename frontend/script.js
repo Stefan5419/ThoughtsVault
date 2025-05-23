@@ -1,4 +1,4 @@
-const PATH_TO_BACKEND = process.env.PATH_TO_BACKEND;
+const PATH_TO_BACKEND = "https://thoughtsvault.onrender.com"
 let isLoggedIn = false;
 
 // Function to check auth status and update UI
